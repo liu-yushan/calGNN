@@ -1,0 +1,9 @@
+graph density
+
+python remove_edges.py --model gcn --dataset Cora --early_stopping True
+python remove_edges.py --model gcn --dataset Citeseer --early_stopping True
+python remove_edges.py --model gcn --dataset Pubmed --early_stopping True
+
+python remove_edges.py --model gat_gcnparam --dataset Cora --early_stopping True
+python remove_edges.py --model gat_gcnparam --dataset Citeseer --early_stopping True
+python remove_edges.py --model gat_gcnparam --dataset Pubmed --early_stopping True

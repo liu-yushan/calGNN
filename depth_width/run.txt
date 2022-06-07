@@ -1,0 +1,20 @@
+depth
+
+python depth.py --model gcn --dataset Cora --epochs 400
+python depth.py --model gcn --dataset Citeseer --epochs 400
+python depth.py --model gcn --dataset Pubmed --epochs 400
+
+python depth.py --model gat --dataset Cora --epochs 400
+python depth.py --model gat --dataset Citeseer --epochs 400
+python depth.py --model gat --dataset Pubmed --epochs 400
+
+
+width
+
+python width.py --model gcn --dataset Cora --early_stopping True
+python width.py --model gcn --dataset Citeseer --early_stopping True
+python width.py --model gcn --dataset Pubmed --early_stopping True
+
+python width.py --model gat --dataset Cora --early_stopping True
+python width.py --model gat --dataset Citeseer --early_stopping True
+python width.py --model gat --dataset Pubmed --early_stopping True

@@ -1,0 +1,39 @@
+train_and_calibrate
+
+python main.py --model gcn --dataset Cora --early_stopping True --num_bins_rbs 2
+python main.py --model gcn --dataset Citeseer --early_stopping True --num_bins_rbs 3
+python main.py --model gcn --dataset Pubmed --early_stopping True --num_bins_rbs 2
+
+python main.py --model gat --dataset Cora --early_stopping True --patience 100 --epochs 1000 --num_bins_rbs 2
+python main.py --model gat --dataset Citeseer --early_stopping True --patience 100 --epochs 1000 --num_bins_rbs 3
+python main.py --model gat --dataset Pubmed --early_stopping True --patience 100 --epochs 1000 --num_bins_rbs 4
+
+python main.py --model sgc --dataset Cora --epochs 100 --tune_wd True --num_bins_rbs 4
+(Best weight decay: 1.2404570293386088e-05)
+python main.py --model sgc --dataset Citeseer --epochs 100 --tune_wd True --num_bins_rbs 4
+(Best weight decay: 0.0006155916908134004)
+python main.py --model sgc --dataset Pubmed --epochs 100 --tune_wd True --num_bins_rbs 3
+(Best weight decay: 8.715736467783865e-05)
+
+python main.py --model gfnn --dataset Cora --epochs 50 --tune_wd True --num_bins_rbs 4
+(Best weight decay: 0.00028573117498149095)
+python main.py --model gfnn --dataset Citeseer --epochs 50 --tune_wd True --num_bins_rbs 3
+(Best weight decay: 0.0009969501379596167)
+python main.py --model gfnn --dataset Pubmed --epochs 50 --tune_wd True --num_bins_rbs 4
+(Best weight decay: 0.0002968527750330462)
+
+python main.py --model appnp --dataset Cora --early_stopping True --patience 100 --epochs 1000 --num_bins_rbs 3
+python main.py --model appnp --dataset Citeseer --early_stopping True --patience 100 --epochs 1000 --num_bins_rbs 4
+python main.py --model appnp --dataset Pubmed --early_stopping True --patience 100 --epochs 1000 --num_bins_rbs 4
+
+
+
+Calibration loss
+
+python main_loss.py --model gcn --dataset Cora --early_stopping True --add_cal_loss True --alpha 0.98 --num_runs 10
+python main_loss.py --model gcn --dataset Citeseer --early_stopping True --add_cal_loss True --alpha 0.99 --num_runs 10
+python main_loss.py --model gcn --dataset Pubmed --early_stopping True --add_cal_loss True --alpha 0.97 --num_runs 10
+
+python main_loss.py --model gat --dataset Cora --early_stopping True --patience 100 --epochs 1000 --add_cal_loss True --alpha 0.97 --num_runs 10
+python main_loss.py --model gat --dataset Citeseer --early_stopping True --patience 100 --epochs 1000 --add_cal_loss True --alpha 0.98 --num_runs 10
+python main_loss.py --model gat --dataset Pubmed --early_stopping True --patience 100 --epochs 1000 --add_cal_loss True --alpha 0.98 --num_runs 10
