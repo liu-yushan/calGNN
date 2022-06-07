@@ -10,7 +10,9 @@ The dependencies required to run the code are specified in [`pyproject.toml`](ht
 The commands for running the experiments from the paper can be found in `run.txt` in the corresponding folders.
 
 
-<h3> Arguments </h3> (defined in `args.py`)
+<h3> Arguments </h3> 
+
+Defined in `args.py`.
 
 `--dataset`: str. Dataset name.
 
