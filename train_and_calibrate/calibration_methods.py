@@ -1,4 +1,4 @@
-# Code partly from https://github.com/JonathanWenger/pycalib/blob/master/pycalib/calibration_methods.py
+# Code is partly from https://github.com/JonathanWenger/pycalib/blob/master/pycalib/calibration_methods.py
 
 import torch
 from torch import nn, optim
